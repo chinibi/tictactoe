@@ -1,0 +1,59 @@
+body {
+  max-width: 900px;
+  margin: 30px auto;
+  font-family: "lucida grande";
+  text-align: center;
+}
+
+header.title {
+  font-size: 40px;
+  text-align:center;
+}
+
+header.playerTurn {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom:40px;
+}
+
+.gameboard {
+  width: 300px;
+  margin: 0 auto;
+  border:1px red;
+  font-size: 0;
+  margin-bottom: 40px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  color: white;
+  line-height: 100px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 48px;
+  border-radius:10px;
+}
+
+.row {
+  height:100px;
+}
+
+.sq00, .sq10, .sq20{
+  position: static;
+  background-color:gray;
+}
+
+.sq01, .sq11, .sq21 {
+  position: relative;
+  left: 100px;
+  top: -100px;
+  background-color: gray;
+}
+
+.sq02, .sq12, .sq22 {
+  position: relative;
+  left: 200px;
+  top: -200px;
+  background-color: gray;
+}
