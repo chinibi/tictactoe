@@ -23,7 +23,6 @@ function init() {
   i = document.getElementById("sq22").innerHTML = null
   winner = '';
   playerTurn = 'X'
-  console.log(playerTurn)
   document.getElementById("playerTurn").innerHTML = playerTurn + " to move"
 }
 
@@ -32,8 +31,12 @@ document.getElementById("reset").addEventListener("click", init);
 function nextTurn() {
   if (playerTurn == 'X') {
     playerTurn = 'O';
+    document.getElementById("playerTurn").innerHTML = playerTurn + " to move"
   }
-  else {playerTurn = 'X'}
+  else {
+    playerTurn = 'X'
+    document.getElementById("playerTurn").innerHTML = playerTurn + " to move"
+  }
 }
 
 function didThreeMatch(r,s,t) {
