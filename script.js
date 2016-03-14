@@ -7,6 +7,8 @@ var f = document.getElementById("sq12").innerHTML = null
 var g = document.getElementById("sq20").innerHTML = null
 var h = document.getElementById("sq21").innerHTML = null
 var i = document.getElementById("sq22").innerHTML = null
+// var spaces = [a,b,c,d,e,f,g,h,i]
+// var buttons = document.getElementsByClassName("square");
 var winner = '';
 var playerTurn = 'X';
 document.getElementById("playerTurn").innerHTML = playerTurn + " to move"
@@ -40,12 +42,12 @@ function nextTurn() {
 }
 
 function didThreeMatch(r,s,t) {
-  if (r == playerTurn && s == playerTurn && t == playerTurn){
+  if ((r == playerTurn && s == playerTurn && t == playerTurn)){
     winner = playerTurn;
     return true;
   }
   else {return false;}
-  }
+}
 
 function winRow() {
   if (didThreeMatch(a,b,c) ||
@@ -75,9 +77,23 @@ function isGameOver() {
     document.getElementById("playerTurn").innerHTML = winner + " has won";
     playerTurn = null;
   }
+  else if ((a&&b&&c&&d&&e&&f&&g&&h&&i) != null) {
+    document.getElementById("playerTurn").innerHTML = "Tie game";
+    playerTurn = null;
+  }
   else {nextTurn()}
 }
 
+
+// for (var i=0; i<buttons.length; i++) {
+//   buttons[i].onclick = function() {
+//     if (buttons[i].innerHTML == null && playerTurn != null) {
+//       document.getElementById(this.id).innerHTML = playerTurn;
+//       spaces[i] = playerTurn;
+//       isGameOver();
+//     }
+//   }
+// }
 
 // make a move on the game board
 document.getElementById("sq00").addEventListener("click", function() {
