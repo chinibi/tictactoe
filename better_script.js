@@ -37,9 +37,7 @@ function nextTurn() {
 
 // checks if the three given spaces match
 function didThreeMatch(r,s,t) {
-  if ((r == s && s == t && r)) {
-    return true;
-  }
+  if ((r == s && s == t && r)) return true
 }
 
 // checks if all squares are taken
@@ -62,7 +60,6 @@ function isGameOver() {
     if (didThreeMatch(r,s,t)) {
       turnEl.innerHTML = `${playerTurn} has won`;
       winner = playerTurn;
-      console.log(winner)
       playerTurn = null;
       over = true;
     }
