@@ -24,7 +24,7 @@ init();
 
 // reset button
 document.getElementById('reset').addEventListener('click', init);
-
+document.getElementById('reset').addEventListener('touch', init);
 
 // game functions
 function nextTurn() {
@@ -72,11 +72,15 @@ function isGameOver() {
 }
 
 // make a move if game isn't over and square is empty
+function makeMove(event) {
+  var that = event.target;
+  if (!board[that.id] && playerTurn) {
+    that.innerHTML = board[that.id] = playerTurn;
+    if (!isGameOver()) nextTurn();
+  }
+}
+
 for (var i=0; i<ids.length; i++) {
-  ids[i].addEventListener('click', () => {
-    if (!board[this.id] && playerTurn) {
-      this.innerHTML = board[this.id] = playerTurn;
-      if (!isGameOver()) nextTurn();
-    }
-  })
+  ids[i].addEventListener('click', makeMove)
+  ids[i].addEventListener('touch', makeMove)
 }

@@ -1,6 +1,4 @@
 body {
-  max-width: 900px;
-  margin: 30px auto;
   font-family: "lucida grande";
   text-align: center;
   color: white;
@@ -23,41 +21,41 @@ header.playerTurn {
   margin-bottom:40px;
 }
 
-.gameboard {
-  width: 310px;
+#gameboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 auto;
-  font-size: 0;
+  width: 315px;
   margin-bottom: 40px;
 }
 
 .square {
   width: 100px;
   height: 100px;
+  margin: 2px;
   color: #4d3e3e;
   background-color: #857373;
   line-height: 100px;
-  vertical-align: middle;
+  /*vertical-align: middle;*/
   text-align: center;
   font-size: 48px;
 }
 
 .row {
-  height:100px;
-  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
 }
 
-.sq00, .sq10, .sq20{
-  position: static;
-}
+/* mobile layout */
+@media handheld {
+  #gameboard {
+    width: 90%;
+  }
 
-.sq01, .sq11, .sq21 {
-  position: relative;
-  left: 105px;
-  top: -100px;
-}
-
-.sq02, .sq12, .sq22 {
-  position: relative;
-  left: 210px;
-  top: -200px;
+  .square {
+    height: 25vw;
+    width: 25vw;
+    margin: 5px;
+  }
 }
