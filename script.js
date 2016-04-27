@@ -1,12 +1,12 @@
-var a = document.getElementById("sq00").innerHTML = null
-var b = document.getElementById("sq01").innerHTML = null
-var c = document.getElementById("sq02").innerHTML = null
-var d = document.getElementById("sq10").innerHTML = null
-var e = document.getElementById("sq11").innerHTML = null
-var f = document.getElementById("sq12").innerHTML = null
-var g = document.getElementById("sq20").innerHTML = null
-var h = document.getElementById("sq21").innerHTML = null
-var i = document.getElementById("sq22").innerHTML = null
+var a = document.getElementById("a").innerHTML = null
+var b = document.getElementById("b").innerHTML = null
+var c = document.getElementById("c").innerHTML = null
+var d = document.getElementById("d").innerHTML = null
+var e = document.getElementById("e").innerHTML = null
+var f = document.getElementById("f").innerHTML = null
+var g = document.getElementById("g").innerHTML = null
+var h = document.getElementById("h").innerHTML = null
+var i = document.getElementById("i").innerHTML = null
 // var spaces = [a,b,c,d,e,f,g,h,i]
 // var buttons = document.getElementsByClassName("square");
 var winner = '';
@@ -14,15 +14,15 @@ var playerTurn = 'X';
 document.getElementById("playerTurn").innerHTML = playerTurn + " to move"
 
 function init() {
-  a = document.getElementById("sq00").innerHTML = null
-  b = document.getElementById("sq01").innerHTML = null
-  c = document.getElementById("sq02").innerHTML = null
-  d = document.getElementById("sq10").innerHTML = null
-  e = document.getElementById("sq11").innerHTML = null
-  f = document.getElementById("sq12").innerHTML = null
-  g = document.getElementById("sq20").innerHTML = null
-  h = document.getElementById("sq21").innerHTML = null
-  i = document.getElementById("sq22").innerHTML = null
+  a = document.getElementById("a").innerHTML = null
+  b = document.getElementById("b").innerHTML = null
+  c = document.getElementById("c").innerHTML = null
+  d = document.getElementById("d").innerHTML = null
+  e = document.getElementById("e").innerHTML = null
+  f = document.getElementById("f").innerHTML = null
+  g = document.getElementById("g").innerHTML = null
+  h = document.getElementById("h").innerHTML = null
+  i = document.getElementById("i").innerHTML = null
   winner = '';
   playerTurn = 'X'
   document.getElementById("playerTurn").innerHTML = playerTurn + " to move"
@@ -96,76 +96,74 @@ function isGameOver() {
 // }
 
 // make a move on the game board
-document.getElementById("sq00").addEventListener("click", function() {
+document.getElementById("a").addEventListener("click", function() {
   if (a == null && playerTurn != null) {
-    document.getElementById("sq00").innerHTML = playerTurn;
+    document.getElementById("a").innerHTML = playerTurn;
     a = playerTurn;
     isGameOver();
   }
 })
 
-document.getElementById("sq01").addEventListener("click", function() {
+document.getElementById("b").addEventListener("click", function() {
   if (b == null && playerTurn != null) {
-    document.getElementById("sq01").innerHTML = playerTurn;
+    document.getElementById("b").innerHTML = playerTurn;
     b = playerTurn;
     isGameOver();
   }
 })
 
-document.getElementById("sq02").addEventListener("click", function() {
+document.getElementById("c").addEventListener("click", function() {
   if (c == null && playerTurn != null) {
-    document.getElementById("sq02").innerHTML = playerTurn;
+    document.getElementById("c").innerHTML = playerTurn;
     c = playerTurn;
     isGameOver();
   }
 })
 
-document.getElementById("sq10").addEventListener("click", function() {
+document.getElementById("d").addEventListener("click", function() {
   if (d == null && playerTurn != null) {
-    document.getElementById("sq10").innerHTML = playerTurn;
+    document.getElementById("d").innerHTML = playerTurn;
     d = playerTurn;
     isGameOver();
   }
 })
 
-document.getElementById("sq11").addEventListener("click", function() {
+document.getElementById("e").addEventListener("click", function() {
   if (e == null && playerTurn != null) {
-    document.getElementById("sq11").innerHTML = playerTurn;
+    document.getElementById("e").innerHTML = playerTurn;
     e = playerTurn;
     isGameOver();
   }
 })
 
-document.getElementById("sq12").addEventListener("click", function() {
+document.getElementById("f").addEventListener("click", function() {
   if (f == null && playerTurn != null) {
-    document.getElementById("sq12").innerHTML = playerTurn;
+    document.getElementById("f").innerHTML = playerTurn;
     f = playerTurn;
     isGameOver();
   }
 })
 
-document.getElementById("sq20").addEventListener("click", function() {
+document.getElementById("g").addEventListener("click", function() {
   if (g == null && playerTurn != null) {
-    document.getElementById("sq20").innerHTML = playerTurn;
+    document.getElementById("g").innerHTML = playerTurn;
     g = playerTurn;
     isGameOver();
   }
 })
 
-document.getElementById("sq21").addEventListener("click", function() {
+document.getElementById("h").addEventListener("click", function() {
   if (h == null && playerTurn != null) {
-    document.getElementById("sq21").innerHTML = playerTurn;
+    document.getElementById("h").innerHTML = playerTurn;
     h = playerTurn;
     isGameOver();
   }
 })
 
-document.getElementById("sq22").addEventListener("click", function() {
+document.getElementById("i").addEventListener("click", function() {
   if (i == null && playerTurn != null) {
-    document.getElementById("sq22").innerHTML = playerTurn;
+    document.getElementById("i").innerHTML = playerTurn;
     i = playerTurn;
     isGameOver();
   }
 })
-
-
