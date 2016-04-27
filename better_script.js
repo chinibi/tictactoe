@@ -1,5 +1,7 @@
 var letters = ['a','b','c','d','e','f','g','h','i'];
-var ids = document.getElementsByClassName('square');
+var ids     = document.getElementsByClassName('square');
+var turnEl  = document.getElementById('playerTurn');
+var resetEl = document.getElementById('reset');
 var board;
 var winner;
 var playerTurn;
@@ -8,8 +10,6 @@ var winCombos = [
   '036', '147', '258', // columns
   '048', '246'         // diagonals
 ];
-var turnEl = document.getElementById('playerTurn');
-var resetEl = document.getElementById('reset');
 
 // clear the board, X to move first
 function init() {
