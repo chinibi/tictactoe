@@ -8,6 +8,8 @@ var winCombos = [
   '036', '147', '258', // columns
   '048', '246'         // diagonals
 ];
+var turnEl = document.getElementById('playerTurn');
+var resetEl = document.getElementById('reset');
 
 // clear the board, X to move first
 function init() {
@@ -17,19 +19,19 @@ function init() {
   };
   winner = '';
   playerTurn = 'X';
-  document.getElementById('playerTurn').innerHTML = `${playerTurn} to move`;
+  turnEl.innerHTML = `${playerTurn} to move`;
 }
 // start the game on load
 init();
 
 // reset button
-document.getElementById('reset').addEventListener('click', init);
-document.getElementById('reset').addEventListener('touch', init);
+resetEl.addEventListener('click', init);
+resetEl.addEventListener('touch', init);
 
 // game functions
 function nextTurn() {
   playerTurn = (playerTurn == 'X' ? 'O' : 'X');
-  document.getElementById('playerTurn').innerHTML = `${playerTurn} to move`;
+  turnEl.innerHTML = `${playerTurn} to move`;
 }
 
 
@@ -58,12 +60,12 @@ function isGameOver() {
         t = board[letters[parseInt(combo[2])]];
 
     if (didThreeMatch(r,s,t)) {
-      document.getElementById('playerTurn').innerHTML = `${playerTurn} has won`;
+      turnEl.innerHTML = `${playerTurn} has won`;
       playerTurn = null;
       over = true;
     }
     else if (isTie()) {
-      document.getElementById('playerTurn').innerHTML = 'tie game';
+      turnEl.innerHTML = 'tie game';
       playerTurn = null;
       over = true;
     }
