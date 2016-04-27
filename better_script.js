@@ -61,15 +61,17 @@ function isGameOver() {
 
     if (didThreeMatch(r,s,t)) {
       turnEl.innerHTML = `${playerTurn} has won`;
-      playerTurn = null;
-      over = true;
-    }
-    else if (isTie()) {
-      turnEl.innerHTML = 'tie game';
+      winner = playerTurn;
+      console.log(winner)
       playerTurn = null;
       over = true;
     }
   })
+  if (!winner && isTie()) {
+    turnEl.innerHTML = 'tie game';
+    playerTurn = null;
+    over = true;
+  }
   return over;
 }
 
