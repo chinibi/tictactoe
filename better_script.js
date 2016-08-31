@@ -19,7 +19,7 @@ function init() {
   };
   winner = '';
   playerTurn = 'X';
-  turnEl.innerHTML = `${playerTurn} to move`;
+  turnEl.innerHTML = playerTurn + ' to move';
 }
 // start the game on load
 init();
@@ -31,13 +31,13 @@ resetEl.addEventListener('touch', init);
 // game functions
 function nextTurn() {
   playerTurn = (playerTurn == 'X' ? 'O' : 'X');
-  turnEl.innerHTML = `${playerTurn} to move`;
+  turnEl.innerHTML = playerTurn + ' to move';
 }
 
 
 // checks if the three given spaces match
 function didThreeMatch(r,s,t) {
-  if ((r == s && s == t && r)) return true
+  if ((r == s && s == t && r)) return true;
 }
 
 // checks if all squares are taken
@@ -52,13 +52,13 @@ function isTie() {
 // checks each row, col, and diag for a winner
 function isGameOver() {
   var over = false
-  winCombos.forEach((combo) => {
+  winCombos.forEach(function(combo) {
     var r = board[letters[parseInt(combo[0])]],
         s = board[letters[parseInt(combo[1])]],
         t = board[letters[parseInt(combo[2])]];
 
     if (didThreeMatch(r,s,t)) {
-      turnEl.innerHTML = `${playerTurn} has won`;
+      turnEl.innerHTML = playerTurn + ' has won';
       winner = playerTurn;
       playerTurn = null;
       over = true;
